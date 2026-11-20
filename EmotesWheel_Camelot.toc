@@ -1,5 +1,5 @@
 ## Interface: 16001
-## Version: 0.1.0
+## Version: 0.1.1
 ## Title: EmotesWheel by |cff55d2ffD4KiR |T132115:16:16:0:0|t
 ## Notes: Opens an emote wheel with a keybind, pick an emote with the mouse
 ## Notes-deDE: Öffnet per Tastenbelegung ein Emote-Rad, Emote mit der Maus auswählen
