@@ -1,6 +1,13 @@
 -- ptBR Portuguese
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("ptBR", "LID_CANCEL", "Cancelar")
+EmotesWheel:AddTrans("ptBR", "LID_COLORACTIVE", "Espaço selecionado")
+EmotesWheel:AddTrans("ptBR", "LID_COLORACTIVETEXT", "Texto selecionado")
+EmotesWheel:AddTrans("ptBR", "LID_COLORBACKGROUND", "Fundo")
+EmotesWheel:AddTrans("ptBR", "LID_COLORBORDER", "Borda")
+EmotesWheel:AddTrans("ptBR", "LID_COLORS", "Cores")
+EmotesWheel:AddTrans("ptBR", "LID_COLORSLOT", "Espaço")
+EmotesWheel:AddTrans("ptBR", "LID_COLORTEXT", "Texto")
 EmotesWheel:AddTrans("ptBR", "LID_EMOTES", "Emotes")
 EmotesWheel:AddTrans("ptBR", "LID_GENERAL", "Geral")
 EmotesWheel:AddTrans("ptBR", "LID_KEYBIND", "Abrir roda")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("ptBR", "LID_NOTINCOMBAT", "Emotes da roda não são possí
 EmotesWheel:AddTrans("ptBR", "LID_POSITION", "Posição da roda")
 EmotesWheel:AddTrans("ptBR", "LID_POSITIONCENTER", "Centro da tela")
 EmotesWheel:AddTrans("ptBR", "LID_POSITIONCURSOR", "No cursor")
+EmotesWheel:AddTrans("ptBR", "LID_RESETCOLORS", "Redefinir cores")
 EmotesWheel:AddTrans("ptBR", "LID_SCALE", "Escala")
 EmotesWheel:AddTrans("ptBR", "LID_SLOT", "Espaço %d")
 EmotesWheel:AddTrans("ptBR", "LID_SLOTS", "Número de espaços")

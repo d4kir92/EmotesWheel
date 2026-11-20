@@ -26,7 +26,9 @@
 ## Category-zhTW: 社交
 ## DefaultState: enabled
 ## SavedVariables: EmotesWheelDB
-## IconTexture: Interface\Icons\Ability_Warrior_BattleShout
+## X-Curse-Project-ID: 1818907
+## X-Wago-ID: qKQgkoNx
+## IconTexture: 132333
 
 libs\D4Lib\D4Lib.xml
 

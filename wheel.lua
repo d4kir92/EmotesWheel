@@ -27,6 +27,36 @@ function EmotesWheel:GetSlotCount()
 	return EmotesWheel:GetConfig("SLOTS", 8)
 end
 
+EmotesWheel.COLORS = {
+	["COLORBACKGROUND"] = {0, 0, 0, 0.45},
+	["COLORBORDER"] = {0.8, 0.65, 0.2, 0.9},
+	["COLORSLOT"] = {0.08, 0.08, 0.1, 0.85},
+	["COLORACTIVE"] = {0.85, 0.6, 0.1, 0.95},
+	["COLORTEXT"] = {1, 0.82, 0, 1},
+	["COLORACTIVETEXT"] = {1, 1, 1, 1}
+}
+
+EmotesWheel.COLORORDER = {"COLORBACKGROUND", "COLORBORDER", "COLORSLOT", "COLORACTIVE", "COLORTEXT", "COLORACTIVETEXT"}
+function EmotesWheel:GetColor(key)
+	local default = EmotesWheel.COLORS[key]
+	local color = EmotesWheel:GV(EmotesWheelDB or {}, key, nil)
+	if type(color) ~= "table" then color = default end
+	return color[1] or default[1], color[2] or default[2], color[3] or default[3], color[4] or default[4]
+end
+
+function EmotesWheel:SetColor(key, r, g, b, a)
+	EmotesWheel:SetConfig(key, {r, g, b, a})
+	EmotesWheel:BuildWheel()
+end
+
+function EmotesWheel:ResetColors()
+	for key in pairs(EmotesWheel.COLORS) do
+		EmotesWheel:SetConfig(key, nil)
+	end
+
+	EmotesWheel:BuildWheel()
+end
+
 function EmotesWheel:GetSlotEmote(index)
 	return EmotesWheel:GetConfig("SLOT" .. index, EmotesWheel.DEFAULTSLOTS[index] or "WAVE")
 end
@@ -46,7 +76,6 @@ local function CreateCircle(parent, size, layer)
 	frame:SetSize(size, size)
 	frame.Border = frame:CreateTexture(nil, layer or "BACKGROUND", nil, 1)
 	frame.Border:SetAllPoints(frame)
-	frame.Border:SetColorTexture(0.8, 0.65, 0.2, 0.9)
 	Round(frame.Border)
 	frame.Fill = frame:CreateTexture(nil, layer or "BACKGROUND", nil, 2)
 	frame.Fill:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
@@ -60,13 +89,14 @@ local function CreateCircle(parent, size, layer)
 end
 
 local function SetSlotActive(slot, active)
+	slot.Border:SetColorTexture(EmotesWheel:GetColor("COLORBORDER"))
 	if active then
-		slot.Fill:SetColorTexture(0.85, 0.6, 0.1, 0.95)
-		slot.Text:SetTextColor(1, 1, 1)
+		slot.Fill:SetColorTexture(EmotesWheel:GetColor("COLORACTIVE"))
+		slot.Text:SetTextColor(EmotesWheel:GetColor("COLORACTIVETEXT"))
 		slot:SetSize(W.SLOTSIZE * 1.15, W.SLOTSIZE * 1.15)
 	else
-		slot.Fill:SetColorTexture(0.08, 0.08, 0.1, 0.85)
-		slot.Text:SetTextColor(1, 0.82, 0)
+		slot.Fill:SetColorTexture(EmotesWheel:GetColor("COLORSLOT"))
+		slot.Text:SetTextColor(EmotesWheel:GetColor("COLORTEXT"))
 		slot:SetSize(W.SLOTSIZE, W.SLOTSIZE)
 	end
 end
@@ -79,15 +109,18 @@ function EmotesWheel:BuildWheel()
 		wheel:Hide()
 		wheel.Ring = wheel:CreateTexture(nil, "BACKGROUND", nil, 0)
 		wheel.Ring:SetAllPoints(wheel)
-		wheel.Ring:SetColorTexture(0, 0, 0, 0.45)
 		Round(wheel.Ring)
 		wheel.Center = CreateCircle(wheel, W.CENTERSIZE, "ARTWORK")
 		wheel.Center:SetPoint("CENTER", wheel, "CENTER", 0, 0)
-		wheel.Center.Fill:SetColorTexture(0.05, 0.05, 0.06, 0.95)
 		wheel.Center.Text:SetFontObject("GameFontNormal")
 		wheel.slots = {}
 		wheel:SetScript("OnUpdate", function() EmotesWheel:UpdateSelection() end)
 	end
+
+	wheel.Ring:SetColorTexture(EmotesWheel:GetColor("COLORBACKGROUND"))
+	wheel.Center.Border:SetColorTexture(EmotesWheel:GetColor("COLORBORDER"))
+	wheel.Center.Fill:SetColorTexture(EmotesWheel:GetColor("COLORSLOT"))
+	wheel.Center.Text:SetTextColor(EmotesWheel:GetColor("COLORACTIVETEXT"))
 
 	local size = (W.RADIUS + W.SLOTSIZE) * 2
 	wheel:SetSize(size, size)

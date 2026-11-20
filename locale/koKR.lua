@@ -1,6 +1,13 @@
 -- koKR Korean
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("koKR", "LID_CANCEL", "취소")
+EmotesWheel:AddTrans("koKR", "LID_COLORACTIVE", "선택된 칸")
+EmotesWheel:AddTrans("koKR", "LID_COLORACTIVETEXT", "선택된 글자")
+EmotesWheel:AddTrans("koKR", "LID_COLORBACKGROUND", "배경")
+EmotesWheel:AddTrans("koKR", "LID_COLORBORDER", "테두리")
+EmotesWheel:AddTrans("koKR", "LID_COLORS", "색상")
+EmotesWheel:AddTrans("koKR", "LID_COLORSLOT", "칸")
+EmotesWheel:AddTrans("koKR", "LID_COLORTEXT", "글자")
 EmotesWheel:AddTrans("koKR", "LID_EMOTES", "감정 표현")
 EmotesWheel:AddTrans("koKR", "LID_GENERAL", "일반")
 EmotesWheel:AddTrans("koKR", "LID_KEYBIND", "휠 열기")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("koKR", "LID_NOTINCOMBAT", "전투 중에는 휠의 감정 
 EmotesWheel:AddTrans("koKR", "LID_POSITION", "휠 위치")
 EmotesWheel:AddTrans("koKR", "LID_POSITIONCENTER", "화면 중앙")
 EmotesWheel:AddTrans("koKR", "LID_POSITIONCURSOR", "커서 위치")
+EmotesWheel:AddTrans("koKR", "LID_RESETCOLORS", "색상 초기화")
 EmotesWheel:AddTrans("koKR", "LID_SCALE", "크기")
 EmotesWheel:AddTrans("koKR", "LID_SLOT", "칸 %d")
 EmotesWheel:AddTrans("koKR", "LID_SLOTS", "칸 수")

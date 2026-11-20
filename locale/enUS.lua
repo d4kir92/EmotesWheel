@@ -1,6 +1,13 @@
 -- enUS English
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("enUS", "LID_CANCEL", "Cancel")
+EmotesWheel:AddTrans("enUS", "LID_COLORACTIVE", "Selected slot")
+EmotesWheel:AddTrans("enUS", "LID_COLORACTIVETEXT", "Selected text")
+EmotesWheel:AddTrans("enUS", "LID_COLORBACKGROUND", "Background")
+EmotesWheel:AddTrans("enUS", "LID_COLORBORDER", "Border")
+EmotesWheel:AddTrans("enUS", "LID_COLORS", "Colors")
+EmotesWheel:AddTrans("enUS", "LID_COLORSLOT", "Slot")
+EmotesWheel:AddTrans("enUS", "LID_COLORTEXT", "Text")
 EmotesWheel:AddTrans("enUS", "LID_EMOTES", "Emotes")
 EmotesWheel:AddTrans("enUS", "LID_GENERAL", "General")
 EmotesWheel:AddTrans("enUS", "LID_KEYBIND", "Open wheel")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("enUS", "LID_NOTINCOMBAT", "Emotes from the wheel are not p
 EmotesWheel:AddTrans("enUS", "LID_POSITION", "Wheel position")
 EmotesWheel:AddTrans("enUS", "LID_POSITIONCENTER", "Screen center")
 EmotesWheel:AddTrans("enUS", "LID_POSITIONCURSOR", "At cursor")
+EmotesWheel:AddTrans("enUS", "LID_RESETCOLORS", "Reset colors")
 EmotesWheel:AddTrans("enUS", "LID_SCALE", "Scale")
 EmotesWheel:AddTrans("enUS", "LID_SLOT", "Slot %d")
 EmotesWheel:AddTrans("enUS", "LID_SLOTS", "Number of slots")

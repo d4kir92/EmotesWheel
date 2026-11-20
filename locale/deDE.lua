@@ -1,6 +1,13 @@
 -- deDE German Deutsch
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("deDE", "LID_CANCEL", "Abbrechen")
+EmotesWheel:AddTrans("deDE", "LID_COLORACTIVE", "Ausgewählter Platz")
+EmotesWheel:AddTrans("deDE", "LID_COLORACTIVETEXT", "Ausgewählter Text")
+EmotesWheel:AddTrans("deDE", "LID_COLORBACKGROUND", "Hintergrund")
+EmotesWheel:AddTrans("deDE", "LID_COLORBORDER", "Rahmen")
+EmotesWheel:AddTrans("deDE", "LID_COLORS", "Farben")
+EmotesWheel:AddTrans("deDE", "LID_COLORSLOT", "Platz")
+EmotesWheel:AddTrans("deDE", "LID_COLORTEXT", "Text")
 EmotesWheel:AddTrans("deDE", "LID_EMOTES", "Emotes")
 EmotesWheel:AddTrans("deDE", "LID_GENERAL", "Allgemein")
 EmotesWheel:AddTrans("deDE", "LID_KEYBIND", "Rad öffnen")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("deDE", "LID_NOTINCOMBAT", "Emotes über das Rad sind im Ka
 EmotesWheel:AddTrans("deDE", "LID_POSITION", "Position des Rads")
 EmotesWheel:AddTrans("deDE", "LID_POSITIONCENTER", "Bildschirmmitte")
 EmotesWheel:AddTrans("deDE", "LID_POSITIONCURSOR", "Am Mauszeiger")
+EmotesWheel:AddTrans("deDE", "LID_RESETCOLORS", "Farben zurücksetzen")
 EmotesWheel:AddTrans("deDE", "LID_SCALE", "Skalierung")
 EmotesWheel:AddTrans("deDE", "LID_SLOT", "Platz %d")
 EmotesWheel:AddTrans("deDE", "LID_SLOTS", "Anzahl der Plätze")

@@ -1,6 +1,13 @@
 -- zhTW Chinese
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("zhTW", "LID_CANCEL", "取消")
+EmotesWheel:AddTrans("zhTW", "LID_COLORACTIVE", "選中的欄位")
+EmotesWheel:AddTrans("zhTW", "LID_COLORACTIVETEXT", "選中的文字")
+EmotesWheel:AddTrans("zhTW", "LID_COLORBACKGROUND", "背景")
+EmotesWheel:AddTrans("zhTW", "LID_COLORBORDER", "邊框")
+EmotesWheel:AddTrans("zhTW", "LID_COLORS", "顏色")
+EmotesWheel:AddTrans("zhTW", "LID_COLORSLOT", "欄位")
+EmotesWheel:AddTrans("zhTW", "LID_COLORTEXT", "文字")
 EmotesWheel:AddTrans("zhTW", "LID_EMOTES", "表情")
 EmotesWheel:AddTrans("zhTW", "LID_GENERAL", "一般")
 EmotesWheel:AddTrans("zhTW", "LID_KEYBIND", "開啟輪盤")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("zhTW", "LID_NOTINCOMBAT", "戰鬥中無法使用輪盤表�
 EmotesWheel:AddTrans("zhTW", "LID_POSITION", "輪盤位置")
 EmotesWheel:AddTrans("zhTW", "LID_POSITIONCENTER", "螢幕中央")
 EmotesWheel:AddTrans("zhTW", "LID_POSITIONCURSOR", "滑鼠位置")
+EmotesWheel:AddTrans("zhTW", "LID_RESETCOLORS", "重設顏色")
 EmotesWheel:AddTrans("zhTW", "LID_SCALE", "縮放")
 EmotesWheel:AddTrans("zhTW", "LID_SLOT", "欄位 %d")
 EmotesWheel:AddTrans("zhTW", "LID_SLOTS", "欄位數量")

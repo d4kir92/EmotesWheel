@@ -1,6 +1,13 @@
 -- frFR French
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("frFR", "LID_CANCEL", "Annuler")
+EmotesWheel:AddTrans("frFR", "LID_COLORACTIVE", "Emplacement sélectionné")
+EmotesWheel:AddTrans("frFR", "LID_COLORACTIVETEXT", "Texte sélectionné")
+EmotesWheel:AddTrans("frFR", "LID_COLORBACKGROUND", "Arrière-plan")
+EmotesWheel:AddTrans("frFR", "LID_COLORBORDER", "Bordure")
+EmotesWheel:AddTrans("frFR", "LID_COLORS", "Couleurs")
+EmotesWheel:AddTrans("frFR", "LID_COLORSLOT", "Emplacement")
+EmotesWheel:AddTrans("frFR", "LID_COLORTEXT", "Texte")
 EmotesWheel:AddTrans("frFR", "LID_EMOTES", "Émotes")
 EmotesWheel:AddTrans("frFR", "LID_GENERAL", "Général")
 EmotesWheel:AddTrans("frFR", "LID_KEYBIND", "Ouvrir la roue")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("frFR", "LID_NOTINCOMBAT", "Les émotes de la roue ne sont 
 EmotesWheel:AddTrans("frFR", "LID_POSITION", "Position de la roue")
 EmotesWheel:AddTrans("frFR", "LID_POSITIONCENTER", "Centre de l'écran")
 EmotesWheel:AddTrans("frFR", "LID_POSITIONCURSOR", "Au curseur")
+EmotesWheel:AddTrans("frFR", "LID_RESETCOLORS", "Réinitialiser les couleurs")
 EmotesWheel:AddTrans("frFR", "LID_SCALE", "Échelle")
 EmotesWheel:AddTrans("frFR", "LID_SLOT", "Emplacement %d")
 EmotesWheel:AddTrans("frFR", "LID_SLOTS", "Nombre d'emplacements")

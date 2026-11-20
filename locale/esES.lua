@@ -1,6 +1,13 @@
 -- esES Spanish Español
 local _, EmotesWheel = ...
 EmotesWheel:AddTrans("esES", "LID_CANCEL", "Cancelar")
+EmotesWheel:AddTrans("esES", "LID_COLORACTIVE", "Casilla seleccionada")
+EmotesWheel:AddTrans("esES", "LID_COLORACTIVETEXT", "Texto seleccionado")
+EmotesWheel:AddTrans("esES", "LID_COLORBACKGROUND", "Fondo")
+EmotesWheel:AddTrans("esES", "LID_COLORBORDER", "Borde")
+EmotesWheel:AddTrans("esES", "LID_COLORS", "Colores")
+EmotesWheel:AddTrans("esES", "LID_COLORSLOT", "Casilla")
+EmotesWheel:AddTrans("esES", "LID_COLORTEXT", "Texto")
 EmotesWheel:AddTrans("esES", "LID_EMOTES", "Emociones")
 EmotesWheel:AddTrans("esES", "LID_GENERAL", "General")
 EmotesWheel:AddTrans("esES", "LID_KEYBIND", "Abrir rueda")
@@ -13,6 +20,7 @@ EmotesWheel:AddTrans("esES", "LID_NOTINCOMBAT", "Las emociones de la rueda no so
 EmotesWheel:AddTrans("esES", "LID_POSITION", "Posición de la rueda")
 EmotesWheel:AddTrans("esES", "LID_POSITIONCENTER", "Centro de la pantalla")
 EmotesWheel:AddTrans("esES", "LID_POSITIONCURSOR", "En el cursor")
+EmotesWheel:AddTrans("esES", "LID_RESETCOLORS", "Restablecer colores")
 EmotesWheel:AddTrans("esES", "LID_SCALE", "Escala")
 EmotesWheel:AddTrans("esES", "LID_SLOT", "Casilla %d")
 EmotesWheel:AddTrans("esES", "LID_SLOTS", "Número de casillas")
