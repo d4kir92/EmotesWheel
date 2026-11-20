@@ -11,7 +11,10 @@ EmotesWheel opens a radial emote wheel with a keybind, similar to the ping wheel
 - Releasing in the center of the wheel cancels.
 - 4 to 12 slots, each with its own emote from a list of common emotes.
 - Adjustable scale.
+- Every emote has its own icon: the wheel shows only icons, the settings show icon and name.
 - Three designs to choose from: Forever (default), Material Dark and Material Light.
+- Language selection in the settings window, independent of the client language.
+- "What's new" window that shows new settings after an update.
 - Emote names follow the client language.
 - Settings window with search and a minimap button.
 

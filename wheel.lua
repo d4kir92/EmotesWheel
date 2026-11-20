@@ -5,6 +5,7 @@ local W = {
 	["SLOTSIZE"] = 60,
 	["CENTERSIZE"] = 70,
 	["DEADZONE"] = 32,
+	["ICONINSET"] = 6,
 	["TWOPI"] = math.pi * 2
 }
 
@@ -39,8 +40,6 @@ EmotesWheel.DESIGNS = {
 		["border"] = {0.8, 0.65, 0.2, 0.9},
 		["slot"] = {0.08, 0.08, 0.1, 0.85},
 		["active"] = {0.85, 0.6, 0.1, 0.95},
-		["text"] = {1, 0.82, 0, 1},
-		["activeText"] = {1, 1, 1, 1},
 		["centerText"] = {1, 1, 1, 1}
 	},
 	["MATERIALDARK"] = {
@@ -49,8 +48,6 @@ EmotesWheel.DESIGNS = {
 		["border"] = Hex("49454f"),
 		["slot"] = Hex("2b2930", 0.95),
 		["active"] = Hex("d0bcff"),
-		["text"] = Hex("e6e0e9"),
-		["activeText"] = Hex("381e72"),
 		["centerText"] = Hex("d0bcff")
 	},
 	["MATERIALLIGHT"] = {
@@ -59,8 +56,6 @@ EmotesWheel.DESIGNS = {
 		["border"] = Hex("cac4d0"),
 		["slot"] = Hex("ece6f0", 0.95),
 		["active"] = Hex("6750a4"),
-		["text"] = Hex("1d1b20"),
-		["activeText"] = Hex("ffffff"),
 		["centerText"] = Hex("6750a4")
 	}
 }
@@ -117,22 +112,28 @@ local function CreateCircle(parent, size, layer)
 	frame.Fill:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
 	frame.Fill:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
 	Round(frame.Fill)
-	frame.Text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-	frame.Text:SetPoint("CENTER", frame, "CENTER", 0, 0)
-	frame.Text:SetWidth(size - 8)
-	frame.Text:SetWordWrap(true)
 	return frame
+end
+
+local function CreateSlot(parent)
+	local slot = CreateCircle(parent, W.SLOTSIZE, "BORDER")
+	slot.Icon = slot:CreateTexture(nil, "ARTWORK")
+	slot.Icon:SetPoint("TOPLEFT", slot, "TOPLEFT", W.ICONINSET, -W.ICONINSET)
+	slot.Icon:SetPoint("BOTTOMRIGHT", slot, "BOTTOMRIGHT", -W.ICONINSET, W.ICONINSET)
+	slot.Icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+	Round(slot.Icon)
+	return slot
 end
 
 local function SetSlotActive(slot, active)
 	slot.Border:SetColorTexture(EmotesWheel:GetColor("border"))
 	if active then
 		slot.Fill:SetColorTexture(EmotesWheel:GetColor("active"))
-		slot.Text:SetTextColor(EmotesWheel:GetColor("activeText"))
+		slot.Icon:SetVertexColor(1, 1, 1, 1)
 		slot:SetSize(W.SLOTSIZE * 1.15, W.SLOTSIZE * 1.15)
 	else
 		slot.Fill:SetColorTexture(EmotesWheel:GetColor("slot"))
-		slot.Text:SetTextColor(EmotesWheel:GetColor("text"))
+		slot.Icon:SetVertexColor(0.85, 0.85, 0.85, 1)
 		slot:SetSize(W.SLOTSIZE, W.SLOTSIZE)
 	end
 end
@@ -148,6 +149,10 @@ function EmotesWheel:BuildWheel()
 		Round(wheel.Ring)
 		wheel.Center = CreateCircle(wheel, W.CENTERSIZE, "ARTWORK")
 		wheel.Center:SetPoint("CENTER", wheel, "CENTER", 0, 0)
+		wheel.Center.Text = wheel.Center:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+		wheel.Center.Text:SetPoint("CENTER", wheel.Center, "CENTER", 0, 0)
+		wheel.Center.Text:SetWidth(W.CENTERSIZE - 8)
+		wheel.Center.Text:SetWordWrap(true)
 		wheel.slots = {}
 		wheel:SetScript("OnUpdate", function() EmotesWheel:UpdateSelection() end)
 	end
@@ -166,7 +171,7 @@ function EmotesWheel:BuildWheel()
 		local slot = wheel.slots[i]
 		if i <= count then
 			if slot == nil then
-				slot = CreateCircle(wheel, W.SLOTSIZE, "BORDER")
+				slot = CreateSlot(wheel)
 				wheel.slots[i] = slot
 			end
 
@@ -174,8 +179,7 @@ function EmotesWheel:BuildWheel()
 			slot:ClearAllPoints()
 			slot:SetPoint("CENTER", wheel, "CENTER", W.RADIUS * math.sin(angle), W.RADIUS * math.cos(angle))
 			slot.token = EmotesWheel:GetSlotEmote(i)
-			ApplyFont(slot.Text, 12, "GameFontHighlightSmall")
-			slot.Text:SetText(EmotesWheel:GetEmoteName(slot.token))
+			slot.Icon:SetTexture(EmotesWheel:GetEmoteIcon(slot.token))
 			SetSlotActive(slot, false)
 			slot:Show()
 		elseif slot then

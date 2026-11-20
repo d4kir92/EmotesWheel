@@ -8,6 +8,7 @@ EmotesWheel:AddTrans("koKR", "LID_DESIGNMATERIALLIGHT", "머티리얼 라이트"
 EmotesWheel:AddTrans("koKR", "LID_EMOTES", "감정 표현")
 EmotesWheel:AddTrans("koKR", "LID_GENERAL", "일반")
 EmotesWheel:AddTrans("koKR", "LID_KEYBIND", "휠 열기")
+EmotesWheel:AddTrans("koKR", "LID_LANGUAGE", "언어")
 EmotesWheel:AddTrans("koKR", "LID_MMBTN", "미니맵 버튼 표시")
 EmotesWheel:AddTrans("koKR", "LID_MODE", "모드")
 EmotesWheel:AddTrans("koKR", "LID_MODEHOLD", "키를 누른 채로, 놓으면 감정 표현")
