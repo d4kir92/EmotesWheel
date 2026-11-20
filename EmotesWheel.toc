@@ -1,0 +1,55 @@
+## Interface-Classic: 11509
+## Interface-Forever: 16001
+## Interface-BCC: 20506
+## Interface-Wrath: 30403
+## Interface-Titan: 38002
+## Interface-Cata: 40402
+## Interface-Mists: 50504
+## Interface: 120105
+
+## Version: 0.1.0
+## Title: EmotesWheel by |cff55d2ffD4KiR |T132115:16:16:0:0|t
+## Notes: Opens an emote wheel with a keybind, pick an emote with the mouse
+## Notes-deDE: Öffnet per Tastenbelegung ein Emote-Rad, Emote mit der Maus auswählen
+## Notes-esES: Abre una rueda de emociones con un atajo, elige la emoción con el ratón
+## Notes-esMX: Abre una rueda de emociones con un atajo, elige la emoción con el mouse
+## Notes-frFR: Ouvre une roue d'émotes avec un raccourci, choisissez l'émote à la souris
+## Notes-itIT: Apre una ruota delle emote con un tasto, scegli l'emote con il mouse
+## Notes-koKR: 단축키로 감정 표현 휠을 열고 마우스로 감정 표현을 선택합니다
+## Notes-ptBR: Abre uma roda de emotes com um atalho, escolha o emote com o mouse
+## Notes-ruRU: Открывает колесо эмоций по клавише, эмоция выбирается мышью
+## Notes-zhCN: 通过快捷键打开表情轮盘，用鼠标选择表情
+## Notes-zhTW: 透過快捷鍵開啟表情輪盤，用滑鼠選擇表情
+## Author: D4KiR |T132115:16:16:0:0|t
+## Category: Social
+## Category-deDE: Soziales
+## Category-esES: Social
+## Category-esMX: Social
+## Category-frFR: Social
+## Category-itIT: Sociale
+## Category-koKR: 소셜
+## Category-ptBR: Social
+## Category-ruRU: Общение
+## Category-zhCN: 社交
+## Category-zhTW: 社交
+## DefaultState: enabled
+## SavedVariables: EmotesWheelDB
+## IconTexture: Interface\Icons\Ability_Warrior_BattleShout
+
+libs\D4Lib\D4Lib.xml
+
+locale\enUS.lua
+locale\deDE.lua
+locale\esES.lua
+locale\esMX.lua
+locale\frFR.lua
+locale\itIT.lua
+locale\koKR.lua
+locale\ptBR.lua
+locale\ruRU.lua
+locale\zhCN.lua
+locale\zhTW.lua
+
+emotes.lua
+wheel.lua
+settings.lua
