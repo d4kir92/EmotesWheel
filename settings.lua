@@ -2,7 +2,6 @@ local _, EmotesWheel = ...
 EmotesWheel:SetAddonOutput()
 local ewset = nil
 local slotDropdowns = {}
-local colorPickers = {}
 local ADDED = "2026-11-20"
 function EmotesWheel:ToggleSettings()
 	if ewset == nil then return end
@@ -93,6 +92,7 @@ local function BuildElements()
 	})
 
 	AddCategory("WHEEL")
+	AddDropdown("DESIGN", EmotesWheel.DESIGNDEFAULT, EmotesWheel:GetDesignChoices(), function() EmotesWheel:BuildWheel() end)
 	AddDropdown("POSITION", "CURSOR", {
 		{
 			["value"] = "CURSOR",
@@ -139,37 +139,8 @@ local function BuildElements()
 		slotDropdowns[i] = AddDropdown("SLOT" .. i, EmotesWheel.DEFAULTSLOTS[i], choices, function() EmotesWheel:BuildWheel() end, format(EmotesWheel:Trans("LID_SLOT"), i))
 	end
 
-	AddCategory("COLORS")
-	for _, key in ipairs(EmotesWheel.COLORORDER) do
-		local r, g, b, a = EmotesWheel:GetColor(key)
-		colorPickers[key] = ewset:AddColorPicker({
-			["label"] = "LID_" .. key,
-			["search"] = key,
-			["added"] = "2026-11-20",
-			["value"] = {r, g, b, a},
-			["func"] = function(nr, ng, nb, na) EmotesWheel:SetColor(key, nr, ng, nb, na) end
-		})
-	end
-
 	UpdateSlotRows()
 	ewset:ResumeLayout()
-end
-
-local function BuildFooter()
-	local footer = ewset:AddFooter({
-		["height"] = 24
-	})
-
-	local reset = EmotesWheel:CreateButton("EmotesWheelResetColors", footer)
-	reset:SetSize(160, 24)
-	reset:SetPoint("LEFT", footer, "LEFT", 0, 0)
-	reset:SetText(EmotesWheel:Trans("LID_RESETCOLORS"))
-	reset:SetScript("OnClick", function()
-		EmotesWheel:ResetColors()
-		for key, holder in pairs(colorPickers) do
-			holder:SetValue(EmotesWheel:GetColor(key))
-		end
-	end)
 end
 
 function EmotesWheel:InitSettings()
@@ -189,7 +160,6 @@ function EmotesWheel:InitSettings()
 		["title"] = format("|T%s:16:16:0:0|t EmotesWheel v%s", EmotesWheel:GetAddonIcon(), EmotesWheel:GetVersion())
 	})
 
-	BuildFooter()
 	BuildElements()
 end
 
